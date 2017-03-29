@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use warnings;
+use v5.20;
+use experimental qw(postderef);
+
+use Data::Dumper;
+
+my $a = [0];
+
+$a->$#*||=~!+-@$a;
+# 12345678901234
+#          11111
+print Dumper $a;
